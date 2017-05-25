@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-
+///The Admin Page BackEnd
 public class AdminLoginActivity extends AppCompatActivity {
 
     DBHelper db;
