@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//The Login Activity backEnd
+
 public class LoginActivity extends AppCompatActivity {
 
 
@@ -26,12 +28,14 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = (Button)findViewById(R.id.btnLogin);
 
 
+        //For login
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 User a = new User(0, userLog.getText().toString(),passLog.getText().toString());
                 if(db.loginByUserName(a))
                 {
+                    //Check if its an admin
                     if(a.name.equals("Admin"))
                     {
                         Intent admin = new Intent(LoginActivity.this,AdminLoginActivity.class);
@@ -47,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(LoginActivity.this, "Fuck", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Nope", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -56,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+    //For not cause StackOverFLow
     protected void onPause() {
         super.onPause();
         db.close();
