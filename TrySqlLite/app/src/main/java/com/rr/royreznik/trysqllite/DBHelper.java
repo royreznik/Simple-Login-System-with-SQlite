@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
+//COnfigurate the DataBase
 
 public class DBHelper extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 2;
@@ -42,6 +43,7 @@ public class DBHelper extends SQLiteOpenHelper{
 
     }
 
+    //Adding User for the DB
     public int insert(User user) {
 
         //Open connection to write data
@@ -57,6 +59,7 @@ public class DBHelper extends SQLiteOpenHelper{
         return (int) student_Id;
     }
 
+    //Get the User by there ID
     public User getUserById(int Id){
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery =  "SELECT  " +
@@ -65,9 +68,7 @@ public class DBHelper extends SQLiteOpenHelper{
                 User.KEY_pass +
                 " FROM " + User.TABLE
                 + " WHERE " +
-                User.KEY_ID + "=?";// It's a good practice to use parameter ?, instead of concatenate string;// It's a good practice to use parameter ?, instead of concatenate string
-
-        //int iCount =0;
+                User.KEY_ID + "=?";
         User user = new User();
 
         Cursor cursor = db.rawQuery(selectQuery, new String[] { String.valueOf(Id) } );
@@ -86,6 +87,7 @@ public class DBHelper extends SQLiteOpenHelper{
         return user;
     }
 
+    //Login Fanction
     public boolean loginByUserName(User user)
     {
         String pass="";
@@ -109,6 +111,7 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
 
+    //Return all the Users in a list
     public ArrayList<String> getUserList() {
         //Open connection to read only
         SQLiteDatabase db = this.getReadableDatabase();
@@ -138,22 +141,23 @@ public class DBHelper extends SQLiteOpenHelper{
 
     }
 
+    //remove by ID, dont used
     public void deleteByID(int ID) {
 
         SQLiteDatabase db = this.getWritableDatabase();
-        // It's a good practice to use parameter ?, instead of concatenate string
         db.delete(User.TABLE, User.KEY_ID + "= ?", new String[] { String.valueOf(ID) });
-        db.close(); // Closing database connection
+        db.close(); 
     }
 
+    //Used in the Admin page to delete users by there Name
     public void deleteByName(String name) {
 
         SQLiteDatabase db = this.getWritableDatabase();
-        // It's a good practice to use parameter ?, instead of concatenate string
         db.delete(User.TABLE, User.KEY_name + "= ?", new String[] { String.valueOf(name) });
-        db.close(); // Closing database connection
+        db.close();
     }
 
+    //Delete the Table
     public void clearTable()   {
         SQLiteDatabase db = this.getWritableDatabase();
     }
