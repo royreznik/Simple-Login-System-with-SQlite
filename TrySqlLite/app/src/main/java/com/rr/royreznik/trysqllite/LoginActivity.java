@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         //For login
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
+            //made by RoyReznik
             public void onClick(View v) {
                 User a = new User(0, userLog.getText().toString(),passLog.getText().toString());
                 if(db.loginByUserName(a))
@@ -51,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(LoginActivity.this, "Nope", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "//made by RoyReznik", Toast.LENGTH_SHORT).show();
                 }
 
 
