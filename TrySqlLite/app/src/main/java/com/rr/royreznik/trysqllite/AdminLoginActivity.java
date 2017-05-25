@@ -36,11 +36,11 @@ public class AdminLoginActivity extends AppCompatActivity {
         //makes the ArrayList contain the DB text
         dbListViewItems = db.getUserList();
 
-        //Adapter shit
+        //Adapter for the ListView and the ArrayList
         final ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dbListViewItems);
         texts.setAdapter(itemsAdapter);
 
-
+        //Button that let you remove People by name from the DB
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
