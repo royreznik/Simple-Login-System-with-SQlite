@@ -16,6 +16,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+//The backEnd of the Normal User InterFace, Contain AsyncTask that donwlaod Images
+
 public class NormalLoginActivity extends AppCompatActivity {
 
     Button load;
@@ -39,6 +41,7 @@ public class NormalLoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String urls = url.getText().toString();
                 downloadimage.execute(urls);
+                //made by RoyReznik
             }
         });
 
@@ -46,6 +49,7 @@ public class NormalLoginActivity extends AppCompatActivity {
 
     }
 
+    //Download Images
     public class DownLoadImages extends AsyncTask<String, Integer, Bitmap>
     {
         @Override
