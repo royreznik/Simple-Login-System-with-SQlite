@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+//Backend of the Staring Page
+//Just for Orginaze
+
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button Login,Register;
@@ -14,7 +17,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
+        //made by RoyReznik
         Login = (Button)findViewById(R.id.btnLog);
         Login.setOnClickListener(MenuActivity.this);
 
@@ -28,6 +31,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         int id = v.getId();
         Intent main = new Intent();
+        //Moving thru Activitys
         switch(id)
         {
             case R.id.btnLog:
