@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 import java.util.ArrayList;
 
+//The register BackEnd
+
 public class MainActivity extends AppCompatActivity {
 
     DBHelper db;
@@ -57,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 db.insert(ra);
             }
         });
-        //Debug Delet
+        
+        //Debug Delete
         tr.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
