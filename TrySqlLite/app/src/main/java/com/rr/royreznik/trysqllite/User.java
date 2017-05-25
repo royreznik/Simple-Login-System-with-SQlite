@@ -3,6 +3,8 @@ package com.rr.royreznik.trysqllite;
 /**
  * Created by royreznik on 24/05/2017.
  */
+
+//Simple Class for User OOP
 public class User {
     // Labels table name
     public static final String TABLE = "Users";
@@ -23,6 +25,7 @@ public class User {
     {
         IDS++;
         this.ID = IDS;
+        //made by RoyReznik
         this.name = name;
         this.Password = Password;
     }
