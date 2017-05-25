@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.rr.royreznik.trysqllite.LoginActivity">
+     <!--
+      The Login Page XML, FrontEnd
+      -->
 
     <EditText
         android:id="@+id/UserLogin"
