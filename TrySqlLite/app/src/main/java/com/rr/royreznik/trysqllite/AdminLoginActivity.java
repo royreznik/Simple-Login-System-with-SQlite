@@ -44,11 +44,12 @@ public class AdminLoginActivity extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //made by RoyReznik
                 db.deleteByName(nameToDelete.getText().toString());
             }
         });
     }
-
+    //Not Cause StackOverFlow
     protected void onPause() {
         super.onPause();
         db.close();
